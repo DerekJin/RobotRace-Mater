@@ -1,6 +1,7 @@
 
-package robotrace;
 
+package robotrace;
+import robotrace.Vector;
 /**
  * Implementation of RaceTrack, creating a track from control points for a 
  * cubic Bezier curve
@@ -8,11 +9,18 @@ package robotrace;
 public class BezierTrack extends RaceTrack {
     
     private Vector[] controlPoints;
-
+public static void reverse(Vector[] data) {
+    for (int left = 0, right = data.length - 1; left < right; left++, right--) {
+        // swap the values at the left and right indices
+        Vector temp = data[left];
+        data[left]  = data[right];
+        data[right] = temp;
+    }
+}
     
     BezierTrack(Vector[] controlPoints) {
         this.controlPoints = controlPoints;
-        
+        reverse(this.controlPoints);
 
 
     }
@@ -47,7 +55,7 @@ public class BezierTrack extends RaceTrack {
         int segment = (int) Math.floor(t * nrOfSegment);
         double T = (t -(((double) segment )/ nrOfSegment)) * nrOfSegment;
         segment = 3 * segment;
-        return getCubicBezierTng(T, controlPoints[segment], controlPoints[segment + 1], controlPoints[segment + 2], controlPoints[segment + 3]).scale(-2);
+        return getCubicBezierTng(T, controlPoints[segment], controlPoints[segment + 1], controlPoints[segment + 2], controlPoints[segment + 3]).normalized();
 
 
     }

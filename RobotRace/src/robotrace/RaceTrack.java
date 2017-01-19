@@ -56,10 +56,7 @@ abstract class RaceTrack {
      * Draws this track, based on the control points.
      */
     public void draw(GL2 gl, GLU glu, GLUT glut, Texture track, Texture brick) {
-//        Vector finishPoint = null;
-//        Vector finishOff = null;
-//        Vector finishPoint2 = null;
-//        Vector finishOff2 = null;
+
 
         // Initialize arraylist of points
         points = new ArrayList();
@@ -118,18 +115,7 @@ abstract class RaceTrack {
                     // add the vector to the offset points list
                     offsetPoints.add(o);
 
-//                    //If 1st segement and first lane
-//                    if (j == 0 && i == 0) {
-//                        // get inner and outer finish line point 
-//                        finishPoint = point;
-//                        finishOff = point.add(normal.normalized().scale((laneWidth * nrOfLanes)));
-//                    }
-//                    //If 5th segment and first lane
-//                    if (j == 5 && i == 0) {
-//                        //get inner and outer finish line point 
-//                        finishPoint2 = point;
-//                        finishOff2 = point.add(normal.normalized().scale((laneWidth * (nrOfLanes))));
-//                    }
+
                 }
                 
                 // draw the test track
@@ -180,17 +166,6 @@ abstract class RaceTrack {
 
                         offsetPoints.add(o);
 
-//                        //if 1st controlpoint and 1st land and 1st segment.
-//                        if (j == 0 && i == 0 && c == 0) {
-//                            //Calculate finish line points
-//                            finishPoint = point;
-//                            finishOff = finishPoint.add(normal.normalized().scale(laneWidth * nrOfLanes));
-//                        }
-//                        if (j == (controlPoints.length / 3) * 5 && i == 0 & c == 0) {
-//                            //Calculate finish line point
-//                            finishPoint2 = point;
-//                            finishOff2 = finishPoint2.add(normal.normalized().scale(laneWidth * nrOfLanes));
-//                        }
                     }
 
                     //Draw track
@@ -204,8 +179,7 @@ abstract class RaceTrack {
             }
 
         }
-//        //Draw the finish line
-//        drawFinish(gl, finish, finishPoint, finishOff, finishPoint2, finishOff2);
+
     }
     
     private void DrawTrack(List<Vector> points, List<Vector> offsetPoints, Double n, GL2 gl, Texture track, Texture brick){
@@ -354,34 +328,7 @@ abstract class RaceTrack {
         gl.glEnd();
     }
     
-    private void drawFinish(GL2 gl, Texture finish, Vector point, Vector off, Vector point_next, Vector off_next) {
-
-        //Map finish texture
-        finish.enable(gl);
-        finish.bind(gl);
-
-        // 2D array to store the line translations
-        int[][] coordinates2d = new int[][]{
-            {0, 0},
-            {1, 0},
-            {1, 1},
-            {0, 1}};
-
-        double[][] coordinates3d = new double[][]{
-            {point.x, point.y, point.z + 0.05},
-            {off.x, off.y, off.z + 0.05},
-            {off_next.x, off_next.y, off_next.z + 0.05},
-            {point_next.x, point_next.y, point_next.z + 0.05}};
-
-        gl.glBegin(GL_QUADS);
-        for (int i = 0; i < coordinates2d.length; i++) {
-            gl.glTexCoord2f(coordinates2d[i][0], coordinates2d[i][1]);
-            gl.glVertex3d(coordinates3d[i][0], coordinates3d[i][1], coordinates3d[i][2]);
-        }
-        gl.glEnd();
-
-        finish.disable(gl);
-    }
+   
     
     /**
      * Returns the center of a lane at 0 <= t < 1.

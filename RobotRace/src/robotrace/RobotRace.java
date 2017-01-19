@@ -113,35 +113,45 @@ public class RobotRace extends Base {
         raceTracks[1] = new BezierTrack(
                 new Vector[]{
                     new Vector(0, 12.5, 1),
-                    new Vector(2.5, 12.5, 1),
-                    new Vector(2.5, 12.5, 1),
-                    new Vector(5, 12.5, 1),
+                    new Vector(4, 12.5, 1),
+                    new Vector(4, 12.5, 1),
+                    
+                    new Vector(8, 12.5, 1),
                     new Vector(12.5, 12.5, 1),
-                    new Vector(12.5, 5, 1),
-                    new Vector(5, 5, 1),
-                    new Vector(0, 5, 1),
-                    new Vector(0, -5, 1),
-                    new Vector(5, -5, 1),
-                    new Vector(12.5, -5, 1),
+                    new Vector(12.5, 8, 1),
+                    
+                    new Vector(8, 8, 1),
+                    new Vector(0, 8, 1),
+                    new Vector(0, -8, 1),
+                    
+                    new Vector(8, -8, 1),
+                    new Vector(12.5, -8, 1),
                     new Vector(12.5, -12.5, 1),
-                    new Vector(5, -12.5, 1),
-                    new Vector(2.5, -12.5, 1),
-                    new Vector(2.5, -12.5, 1),
+                    
+                    new Vector(8, -12.5, 1),
+                    new Vector(8, -12.5, 1),
+                    new Vector(8, -12.5, 1),
+                    
                     new Vector(0, -12.5, 1),
-                    new Vector(-2.5, -12.5, 1),
-                    new Vector(-2.5, -12.5, 1),
-                    new Vector(-5, -12.5, 1),
+                    new Vector(-4, -12.5, 1),
+                    new Vector(-4, -12.5, 1),
+                    
+                    new Vector(-8, -12.5, 1),
                     new Vector(-12.5, -12.5, 1),
-                    new Vector(-12.5, -5, 1),
-                    new Vector(-5, -5, 1),
-                    new Vector(0, -5, 1),
-                    new Vector(0, 5, 1),
-                    new Vector(-5, 5, 1),
-                    new Vector(-12.5, 5, 1),
+                    new Vector(-12.5, -8, 1),
+                    
+                    new Vector(-8, -8, 1),
+                    new Vector(0, -8, 1),
+                    new Vector(0, 8, 1),
+                    
+                    new Vector(-8, 8, 1),
+                    new Vector(-12.5, 8, 1),
                     new Vector(-12.5, 12.5, 1),
-                    new Vector(-5, 12.5, 1),
-                    new Vector(-2.5, 12.5, 1),
-                    new Vector(-2.5, 12.5, 1),
+                    
+                    new Vector(-8, 12.5, 1),
+                    new Vector(-4, 12.5, 1),
+                    new Vector(-4, 12.5, 1),
+                    
                     new Vector(0, 12.5, 1)
                 }
         );
